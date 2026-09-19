@@ -1,0 +1,269 @@
+<title>Agapio Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper-deep: #ECE5D7;
+    --paper: #F4EFE6;
+    --paper-raised: #FBF8F1;
+    --hairline: #E2D9C8;
+    --hairline-dim: #D8CDB8;
+    --ink: #21201C;
+    --body-ink: #3D3A30;
+    --taupe: #6B6353;
+    --stone: #A39885;
+    --oxblood: #9A3B2E;
+    --oxblood-deep: #7A2E23;
+    --gold: #C9A24B;
+    --gold-light: #E9C97F;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper-deep: #15130F;
+      --paper: #1C1913;
+      --paper-raised: #242019;
+      --hairline: #332C21;
+      --hairline-dim: #3D3527;
+      --ink: #F2EAD9;
+      --body-ink: #D8CEB8;
+      --taupe: #B3A585;
+      --stone: #8A7F68;
+      --oxblood: #D0604A;
+      --oxblood-deep: #B24B36;
+      --gold: #D9B764;
+      --gold-light: #EAD08A;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper-deep: #15130F;
+    --paper: #1C1913;
+    --paper-raised: #242019;
+    --hairline: #332C21;
+    --hairline-dim: #3D3527;
+    --ink: #F2EAD9;
+    --body-ink: #D8CEB8;
+    --taupe: #B3A585;
+    --stone: #8A7F68;
+    --oxblood: #D0604A;
+    --oxblood-deep: #B24B36;
+    --gold: #D9B764;
+    --gold-light: #EAD08A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper-deep);
+    color: var(--body-ink);
+    font-family: "Newsreader", Georgia, "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .masthead {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .fleuron {
+    font-size: 32px;
+    line-height: 1;
+    color: var(--gold);
+    margin: 0 0 6px;
+  }
+
+  .wordmark {
+    font-family: "Newsreader", serif;
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-family: "Space Mono", "Courier New", monospace;
+    font-size: 10.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-top: 10px;
+  }
+
+  .rule {
+    height: 1px;
+    width: 34px;
+    background: var(--gold);
+    margin: 22px auto 0;
+  }
+
+  .sheet {
+    background: var(--paper-raised);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    padding: 44px clamp(24px, 6vw, 56px) 52px;
+    box-shadow: 0 1px 2px rgba(20, 16, 8, 0.04);
+  }
+
+  .intro {
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--taupe);
+    margin: 0 0 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  section {
+    margin-bottom: 34px;
+  }
+  section:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .section-num {
+    display: block;
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    font-family: "Newsreader", serif;
+    font-weight: 500;
+    font-size: 21px;
+    letter-spacing: -0.2px;
+    color: var(--ink);
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.72;
+    margin: 0 0 14px;
+    max-width: 62ch;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+  }
+  li {
+    font-size: 16px;
+    line-height: 1.68;
+    margin-bottom: 8px;
+    max-width: 58ch;
+  }
+  li:last-child { margin-bottom: 0; }
+
+  strong { color: var(--ink); font-weight: 500; }
+
+  a {
+    color: var(--oxblood);
+    text-decoration-color: var(--gold);
+    text-underline-offset: 3px;
+  }
+  a:hover { color: var(--oxblood-deep); }
+  a:focus-visible {
+    outline: 2px solid var(--oxblood);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .contact-card {
+    margin-top: 6px;
+    padding: 18px 20px;
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+  }
+  .contact-card a {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .footer-note {
+    text-align: center;
+    margin-top: 28px;
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+</style>
+
+<div class="page">
+  <div class="masthead">
+    <p class="fleuron">❦</p>
+    <p class="wordmark">Agapio</p>
+    <p class="eyebrow">Support</p>
+    <div class="rule"></div>
+  </div>
+
+  <div class="sheet">
+    <p class="intro">
+      Something not working, or something you'd like to see? This page is the fastest way to
+      reach us.
+    </p>
+
+    <section>
+      <span class="section-num">01</span>
+      <h2>Contact us</h2>
+      <p>
+        Write to us directly and we'll get back to you — bug reports, account issues, billing
+        questions about Agapio Unlimited, or anything else.
+      </p>
+      <div class="contact-card">
+        <a href="mailto:rey.rey.agapi@gmail.com">rey.rey.agapi@gmail.com</a>
+      </div>
+    </section>
+
+    <section>
+      <span class="section-num">02</span>
+      <h2>Reporting a problem in the app</h2>
+      <p>
+        Agapio has a built-in bug report form — open the <strong>You</strong> tab and scroll to
+        <strong>Report a bug</strong>. That's often faster than email, since it reaches us
+        directly with your message.
+      </p>
+    </section>
+
+    <section>
+      <span class="section-num">03</span>
+      <h2>Subscriptions and billing</h2>
+      <p>
+        Agapio Unlimited is billed through your Apple ID, not by us directly — we never see your
+        payment details. To manage, cancel, or request a refund for a subscription, go to your
+        device's <strong>Settings → your name → Subscriptions</strong>, or visit
+        <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener">apps.apple.com/account/subscriptions</a>.
+      </p>
+    </section>
+
+    <section>
+      <span class="section-num">04</span>
+      <h2>Your data and privacy</h2>
+      <p>
+        See our <a href="https://razvan377.github.io/agapio-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+        for what Agapio collects and why. You can delete your account at any time from the
+        <strong>You</strong> tab, under <strong>Account</strong>.
+      </p>
+    </section>
+  </div>
+
+  <p class="footer-note">Agapio · Knowledge worth keeping</p>
+</div>
